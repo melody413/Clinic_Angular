@@ -1,0 +1,418 @@
+<header class="home_top bg-[url('/assets/images/home/doctors.jpg')] bg-no-repeat bg-cover bg-top z-0 h-[850px]" >
+   <div class="yellow_shape  bg-[url('/assets/images/home/yellow_shape.png')]  bg-no-repeat lg:block hidden"></div>
+   <div class="home_header">
+      <div class="flex flex-row space-x-2 justify-around container lg:flex hidden">
+         <div>
+            <a routerLink="/home">
+               <img src="assets/images/home/logo_big.png"/>
+            </a>
+         </div>
+         <div>
+            <nav class="site_nave">
+               <ul class=" flex flex-row items-center space-x-2">
+                  <li>
+                     <a rel="alternate" hreflang="ar" href="/blog" target="_blank">العربية</a>
+                  </li>
+                  <li class="country relative" (mouseenter)="showDropdown()" (mouseleave)="hideDropdown()">
+                     <a>
+                        <img src="/assets/images/general/eg.png" width="48" >
+                     </a>  
+                     <ul *ngIf="isCountryFlag"  class="absolute nav_children" (mouseenter)="showDropdown()" (mouseleave)="hideDropdown()">
+                        <li class="flex items-center border-b	" >
+                           <button class="flex items-center">
+                              <img src="/assets/images/general/eg.png" width="48"/>
+                              <span class="ml-[5px] text-[#4a4a4a] font-[700]">Egypt</span>
+                           </button>
+                        </li>
+                        <li class="!mt-[7px]" >
+                           <button class="flex items-center">
+                              <img class="rounded-[50%]" src="/assets/images/general/sa.png" width="48"/>
+                              <span class="ml-[5px] text-[#4a4a4a] font-[700]">KSA</span>
+                           </button>
+                        </li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a href="/blog/" target="_blank">Articles</a>
+                  </li>
+                  <li>
+                     <a routerLink="/register" target="_blank">List your Business</a>
+                  </li>
+                  <li>
+                     <a href="#" onclick="return false" ><i class="fas fa-user"></i>Sign in/Join</a>
+                  </li>
+               </ul>
+            </nav>
+         </div>
+      </div>
+   </div>
+   <div class="home_intro_text z-10 relative">
+      <h1 class="text-[white] font-sans lg:text-7xl md:text-4xl text-2xl	font-bold text-center font-extrabold	">
+         Feeling Sick?<br>
+         Find a doctor. It is free.
+      </h1>
+   </div>
+   <div class="z-10 relative m-auto max-w-[1140px]">
+      <div class="home_filter_wrapper mt-[80px] mb-[20px] mx-[40px]">
+         <ul class="nav flex flex-row justify-center">
+            <li class="nav-item font-semibold !text-[white]">
+               <a class="nav-link active" href="/home">
+                  <i class="icon-doctor"></i>
+                  <span class="lg:block hidden">Doctors</span>
+               </a>
+            </li>
+            <li class="nav-item ">
+               <a class="nav-link hospitals " id="hospitals-tab" data-toggle="tab" href="#hospitals" role="tab" aria-controls="hospitals" aria-selected="false">
+                  <i class="icon-hospital"></i>
+                  <span class="lg:block hidden">Hospitals</span>
+               </a>
+            </li>
+            <li class="nav-item  ">
+               <a class="nav-link centers " id="centers-tab" data-toggle="tab" href="#centers" role="tab" aria-controls="centers" aria-selected="false">
+                  <i class="icon-center"></i>
+                  <span class="lg:block hidden">Centers</span>
+               </a>
+            </li>
+            <li class="nav-item ">
+               <a class="nav-link pharmacies" id="pharmacies-tab" data-toggle="tab" href="#pharmacies" role="tab" aria-controls="pharmacies" aria-selected="false">
+                  <i class="icon-pharmacey"></i>
+                  <span class="lg:block hidden">Pharmacies</span>
+               </a>
+            </li>
+            <li class="nav-item  ">
+               <a class="nav-link labs " id="labs-tab" data-toggle="tab" href="#labs" role="tab" aria-controls="labs" aria-selected="false">
+                  <i class="icon-lab"></i>
+                  <span class="lg:block hidden">Labs</span>
+               </a>
+            </li>
+         </ul>
+      </div>
+      <div class="tab-content home_tab_content mt-[50px]">
+         <form>
+            <ul class="flex flex-row justify-center">
+               <li>
+                  <div class="relative !w-[100%]">
+                     <select>
+                        <option><input /></option>
+                        <option>Specialty</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                     </select>
+                     <button class="toggle-btn">Specialty</button>
+                     <div class="drop-menu">
+                        <div>
+                           <input class="form-control px-[4px] py-[8px]"/>
+                        </div>
+                        <div>
+                           <ul>
+                              <li>1</li>
+                              <li>2</li>
+                              <li>3</li>
+                              <li>4</li>
+                              <li>5</li>
+                              <li>6</li>
+                              <li>7</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </li>
+               <li>
+                  <select>
+                     <option>City</option>
+                  </select>
+               </li>
+               <li>
+                  <select>
+                     <option>Area</option>
+                  </select>
+               </li>
+               <li>
+                  <select>
+                     <option>Service</option>
+                  </select>
+               </li>
+               <li>
+                  <select>
+                     <option>Insurance</option>
+                  </select>
+               </li>
+               <li class="double !basis-[150%]">
+                  <input placeholder="Name" type="text"/>
+               </li>
+               <li class="!basis-[40%] action">
+                  <button class="search">
+                     <i class="icon-search"></i>
+                  </button>
+               </li>
+
+            </ul>
+         </form>
+      </div>
+   </div>
+</header>
+
+<section class="py-[70px] bg-[#fafafa]">
+   <div class="container lg: max-w-[1280px]">
+      <h2 class="specialty_header">Popular Specialities</h2>
+      <div class="flex flex-row justify-center  text-center	">
+         <div class="col-md items-center">
+            <a class="news_data">
+               <div>
+                  <img src="/assets/images/home/eye.png" width="110px"/>
+               </div>
+               <div>
+                  <h5>Ophthalmology</h5>
+               </div>
+            </a>
+         </div>
+         <div class="col-md">
+            <a class="news_data">
+               <div>
+                  <img src="/assets/images/home/teeth.png" width="110px"/>
+               </div>
+               <div>
+                  <h5>Dentistry</h5>
+               </div>
+            </a>
+         </div>
+         <div class="col-md">
+            <a class="news_data">
+               <div>
+                  <img src="/assets/images/home/skin.png" width="110px"/>
+               </div>
+               <div>
+                  <h5>Dermatologist</h5>
+               </div>
+            </a>
+         </div>
+         <div class="col-md">
+            <a class="news_data">
+               <div>
+                  <img src="/assets/images/home/pregnant.png" width="110px"/>
+               </div>
+               <div>
+                  <h5>Obstretrics and Gynecology</h5>
+               </div>
+            </a>
+         </div>
+         <div class="col-md">
+            <a class="news_data">
+               <div>
+                  <img src="/assets/images/home/heart.png" width="110px"/>
+               </div>
+               <div>
+                  <h5>Cardiology</h5>
+               </div>
+            </a>
+         </div>
+         <div class="col-md">
+            <a class="news_data">
+               <div>
+                  <img src="/assets/images/home/baby.png" width="110px"/>
+               </div>
+               <div>
+                  <h5>Pediatrician</h5>
+               </div>
+            </a>
+         </div>
+      </div>
+   </div>
+   
+</section>
+
+<!-- <section class="py-[70px] bg-[url('/assets/images/home/doc_background.jpg')] bg-no-repeat bg-cover"> -->
+<section class="py-[70px] bg-[#5487e1] bg-no-repeat bg-cover">
+
+   <div class="container lg:max-w-[1280px]">
+      <div class="flex flex-row relative items-baseline">
+         <div class="w-[66%]">
+            <strong class="text-white	text-[40px] font-[700]">Are you a doctor?</strong>
+            <p class="pt-[8px] text-white text-[20px]">List your practice to reach millions of patients.</p>
+            <ul class="my-[15px] ml-[120px] list-disc	">
+               <li class="text-[15px] font-[500] pt-[5px] text-white">Attract and engage new patients</li>
+               <li class="text-[15px] font-[500] pt-[5px] text-white">Build and strengthen your online reputation</li>
+               <li class="text-[15px] font-[500] pt-[5px] text-white">Deliver a premium experience patients love</li>
+           </ul>
+           <a routerLink="/register" class="default_btn mt-[10px] ml-[100px]">List your practice on Doctorak</a>
+         </div>
+         <div class="absolute top-[-112px] right-[0px] ">
+            <img class="scale-x-[-1]" src="/assets/images/home/convince_doctor_img.png" />
+         </div>
+      </div>
+
+   </div>
+</section>
+
+
+<section class="pt-[50px] bg-[#fafafa]">
+   <div class="container lg: max-w-[1280px]">
+      <h2>Calculator</h2>
+      <div class="flex flex-row justify-center  text-center	">
+         <div class="col-md items-center">
+            <a class="news_data">
+               <div>
+                  <img src="/assets/images/home/pregnant.png" width="110px"/>
+               </div>
+               <div>
+                  <h5>
+                     Pregnancy Calculator
+                  </h5>
+               </div>
+            </a>
+         </div>
+         <div class="col-md">
+            <a class="news_data">
+               <div>
+                  <img src="/assets/images/home/calorie.png" width="110px"/>
+               </div>
+               <div>
+                  <h5>Calorie Calculator</h5>
+               </div>
+            </a>
+         </div>
+         <div class="col-md">
+            <a class="news_data">
+               <div>
+                  <img src="/assets/images/home/Ovulation.png" width="110px"/>
+               </div>
+               <div>
+                  <h5>
+                     Ovulation Calculator</h5>
+               </div>
+            </a>
+         </div>
+         <div class="col-md">
+            <a class="news_data">
+               <div>
+                  <img src="/assets/images/home/body.png" width="110px"/>
+               </div>
+               <div>
+                  <h5>Body Mass Index Calculator (BMI)</h5>
+               </div>
+            </a>
+         </div>
+         <div class="col-md">
+            <a class="news_data">
+               <div>
+                  <img src="/assets/images/home/period.png" width="110px"/>
+               </div>
+               <div>
+                  <h5>Period Calculator</h5>
+               </div>
+            </a>
+         </div>
+      </div>
+   </div>
+</section>
+
+<section class="py-[80px] bg-[#fafafa]">
+   <div class="container lg: max-w-[1280px]">
+      <h2>Find whatever you seek …</h2>
+      <div class="flex flex-row space-x-10">
+         <div class="col-md">
+            <div class="seeking_header pb-[10px]">
+               <h3 class="relative inline-block text-[18px] font-[600] pt-[20px] mb-[0px]">
+                  <i class="icon-doctor text-[35px]"></i>
+                  <span class="ml-[15px]">Doctors</span>
+               </h3>
+            </div>
+            <div class="seeking_content pt-[20px]">
+               <ul>
+                  <li><a href="https://staging.doctorak.com/eg_en/doctor?speciality=1" target="_blank">Cardiothoracic</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/doctor?speciality=2" target="_blank">Reconstructive</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/doctor?speciality=3" target="_blank">Otolaryngology Surgery  (ENT)</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/doctor?speciality=4" target="_blank">Orthopedics</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/doctor?speciality=5" target="_blank">Vascular</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/doctor?speciality=6" target="_blank">Oncology Surgery</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/doctor?speciality=7" target="_blank">Neurosurgery</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/doctor?speciality=8" target="_blank">Urology surgery</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/doctor?speciality=9" target="_blank">General surgery</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/doctor?speciality=10" target="_blank">Pediatric surgery</a></li>
+               </ul>
+               <a href="https://staging.doctorak.com/eg_en/doctor" class="btn btn-link" target="_blank">View All</a>
+
+            </div>
+         </div>
+         <div class="col-md">
+            <div class="seeking_header pb-[10px]">
+               <h3 class="relative inline-block text-[18px] font-[600] pt-[20px] mb-[0px]">
+                  <i class="icon-hospital text-[35px]"></i>
+                  <span class="ml-[15px]">Hospitals</span>
+               </h3>
+            </div>
+            <div class="seeking_content pt-[20px]">
+               <ul>
+                  <li><a href="https://staging.doctorak.com/eg_en/hospital/1">Hospital Manial University Specialized</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/hospital/2">Hospital Military evacuation of families</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/hospital/3">Hospital The military al helmeyat of bone and supplementation</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/hospital/4">Hospital Al rahma</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/hospital/5">Hospital Alzaytun Specialized (Amyria)</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/hospital/6">Hospital Al salam International</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/hospital/7">Hospital Al Sheikh Zayed Specialized</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/hospital/8">Hospital Al qasr aleayni (alfaransawi)</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/hospital/9">Hospital Specialized Medical Center (Ministry of Interior)</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/hospital/10">Hospital Arab Contractors Medical Center (Internal Medicine Cases Only)</a></li>
+               </ul>
+               <a href="https://staging.doctorak.com/eg_en/hospital" class="btn btn-link">View All</a>
+            </div>
+         </div>
+         <div class="col-md">
+            <div class="seeking_header pb-[10px]">
+               <h3 class="relative inline-block text-[18px] font-[600] pt-[20px] mb-[0px]">
+                  <i class="icon-center text-[35px]"></i>
+                  <span class="ml-[15px]">Centers</span>
+               </h3>
+            </div>
+            <div class="seeking_content pt-[20px]">
+               <ul>
+                  <li><a href="https://staging.doctorak.com/eg_en/center/1">Center Heliopolis Heart</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/center/2">Center international Medical</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/center/3">Center Al Mataria Al Educational</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/center/4">Center National Cancer Institute</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/center/5">Center National Institute of Kidney and Urology</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/center/6">Center Dar Al Arqam Charitable Society</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/center/8">Center Specialized Sports Medicine</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/center/9">Center Medicine House (Heart Place)</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/center/10">Center Digestive surgery and endoscopy unit</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/center/11">Center ENT Clinic (Otolaryngology Surgery)</a></li>
+               </ul>
+               <a href="https://staging.doctorak.com/eg_en/center" class="btn btn-link">View All</a>
+            </div>
+         </div>
+         <div class="col-md">
+            <div class="seeking_header pb-[10px]">
+               <h3 class="relative inline-block text-[18px] font-[600] pt-[20px] mb-[0px]">
+                  <i class="icon-pharmacey text-[35px]"></i>
+                  <span class="ml-[15px]">Pharmacies</span>
+               </h3>
+            </div>
+            <div class="seeking_content pt-[20px]">
+               <ul>
+                  <li><a href="https://staging.doctorak.com/eg_en/pharmacy/1">Pharmacy Alagzakhana</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/pharmacy/2">Pharmacy El Rezeiky</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/pharmacy/3">Pharmacy Barsoom</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/pharmacy/4">Pharmacy Marzouk</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/pharmacy/5">Pharmacy El Loualoaa</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/pharmacy/6">Pharmacy Pharma Hani</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/pharmacy/7">Pharmacy Islamic Medical Pharmacy</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/pharmacy/8">Pharmacy Dina Hani Kamel</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/pharmacy/9">Pharmacy El Malek El Saleh</a></li>
+                  <li><a href="https://staging.doctorak.com/eg_en/pharmacy/10">Pharmacy El Ahram El Kobra</a></li>
+               </ul>
+               <a href="https://staging.doctorak.com/eg_en/pharmacy" class="btn btn-link">View All</a>
+            </div>
+         </div>
+      </div>
+   </div>
+
+</section>
+
+<app-footer></app-footer>
+
+<!-- <app-login-modal></app-login-modal> -->

@@ -1,0 +1,49 @@
+<div class="modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="text-[15px] font-[700]">Sign in / Join</h5>
+          <button class="modal-close" (click)="onClose()">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div>
+              <label class="col-form-label">
+                E-mail Address
+              </label>
+              <input class="form-control" type="text" required/>
+
+            </div>
+            <div>
+              <label class="col-form-label">
+                Password
+              </label>
+              <input class="form-control" type="password"/>
+            </div>
+            <div class="flex flex-row justify-between">
+              <label class="text-[18px]">
+                <input type="checkbox"/>
+                Remember me
+              </label>
+              <div>
+                <a class="text-[18px] font-[400] text-blue-700">
+                  Forgot your password?
+                </a>
+              </div>
+            </div>
+            <div class="mb-[1rem] mt-[20px]">
+              <button class="login-btn">Login</button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer flex flex-col">
+          <div>
+            <strong>Don't have account?</strong>
+          </div>
+          <div class="register-btn">
+            <a>Register Now For Free</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

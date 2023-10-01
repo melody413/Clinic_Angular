@@ -1,0 +1,75 @@
+
+.form-control{
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.cal-btn{
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color .15s;
+    height: 40px;
+}
+
+
+.cal-btn:hover{
+    background-color: white;
+    color: #0062cc;
+    border: 1px solid #0062cc;
+}
+
+.background{
+    margin-top: 50px;
+    background-color: #3399ff;
+    background-image: linear-gradient(to left, #3399ff 0px, #009933 33%, #ffd633 65%, #d81e05 100%);
+    height: 15px;
+    border-radius: 15px;
+    width: 100%;
+    position: relative;
+}
+
+
+
+.res{
+    position: absolute;
+    top: -45px;
+    background: #e2e2e2;
+    padding: 5px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.res::after{
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #e2e2e2;
+    bottom: -5px;
+    left: 50%;
+    transform: rotate(45deg);
+}

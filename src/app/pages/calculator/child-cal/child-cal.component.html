@@ -1,0 +1,237 @@
+<div class="bg-[#f0f7f6] py-[120px] text-end">
+    <div class="rounded-[10px] bg-white container lg:max-w-[1280px] pt-[10px] pb-[50px]">
+        <div class="cal-title text-[#0062cc]">
+            <h1 class="font-[500] text-[2.5rem] pb-[15px]">حاسبة الحمل والولادة</h1>
+            <hr >
+        </div>    
+        <div class="cal-body">
+            <div class="flex flex-row-reverse items-start mt-[60px] container lg:max-w-[768px]">
+                <div class="basis-[12.333333%]">
+                    <img src="/assets/images/home/pregnant.png" />
+                </div>
+                <div class="mr-[40px] basis-11/12">
+                    <h1 class="pb-[15px] text-[18px] font-[600] text-[#4a4a4a]">حاسبة الحمل والولادة هذه الحاسبة تساعدك على تحديد مراحل الحمل المهمة وموعد الولادة المتوقع</h1>
+                </div>
+            </div>           
+            <h1 class="pt-[35px] text-[18px] font-[600] text-[#4a4a4a] container lg:max-w-[768px]">تاريخ أول يوم لآخر دورة شهرية</h1> 
+            <div class="container lg:max-w-[768px] flex flex-row-reverse justify-between mt-[15px]">
+
+                <div class="w-[30%]">
+                    <select class="form-control">
+                        <option selected hidden>اليوم</option>
+                        <option value="">01</option>
+                        <option value="">02</option>
+                        <option value="">03</option>
+                        <option value="">04</option>
+                        <option value="">05</option>
+                        <option value="">06</option>
+                        <option value="">07</option>
+                        <option value="">08</option>
+                        <option value="">09</option>
+                        <option value="">10</option>
+                        <option value="">11</option>
+                        <option value="">12</option>
+                        <option value="">13</option>
+                        <option value="">14</option>
+                        <option value="">15</option>
+                        <option value="">16</option>
+                        <option value="">17</option>
+                        <option value="">18</option>
+                        <option value="">19</option>
+                        <option value="">20</option>
+                        <option value="">21</option>
+                        <option value="">22</option>
+                        <option value="">23</option>
+                        <option value="">24</option>
+                        <option value="">25</option>
+                        <option value="">26</option>
+                        <option value="">27</option>
+                        <option value="">28</option>
+                        <option value="">29</option>
+                        <option value="">30</option>
+                        <option value="">31</option>
+                    </select>
+                </div>
+                
+                <div class="w-[30%]">
+                    <select class="form-control">
+                        <option selected hidden>الشهر</option>
+                        <option value="1">يناير</option>
+                        <option value="2">فبراير</option>
+                        <option value="3">مارس</option>
+                        <option value="4">ابريل</option>
+                        <option value="5">مايو</option>
+                        <option value="6">يونيو</option>
+                        <option value="7">يوليو</option>
+                        <option value="8">اغسطس</option>
+                        <option value="9">سبتمبر</option>
+                        <option value="10">اكتوبر</option>
+                        <option value="11">نوفمبر</option>
+                        <option value="12">ديسمبر</option>
+                    </select>
+                </div>
+
+                <div class="w-[30%]">
+                    <select class="form-control">
+                        <option>2023</option>
+                    </select>
+                </div>
+                
+            </div>
+            
+            <div class="container lg:max-w-[768px] mt-[20px]">
+                <button class="cal_btn form-control">احسبي</button>
+            </div>
+        </div>
+        
+        <div class="cal-result mt-[40px]">
+            <h1 class="text-[1.75rem] font-[500]">حاسبة الحمل والولادة</h1>
+            <div class="flex flex-row-reverse justify-around">
+                <div class="basis-1/4 p-[10px]">
+                    <div class="text-center p-[30px] mt-[30px] bg-[#fbfbfb] min-h-[150px] rounded-[20px] border border-gray-300 shadow-lg">
+                        <p class="text-[16px] font-[700] text-[#4a4a4a] mb-[1rem]">أول موعد للولادة</p> 
+                        <h4 class="text-[#0d7de0] text-[1.5rem] font-[500] mb-[0.5rem]" id="first-birth-date">06/09/2020</h4>
+                    </div>
+                </div>
+
+                <div class="basis-1/4 p-[10px]"> 
+                    <div class="text-center p-[30px] mt-[30px] bg-[#effffd] min-h-[150px] rounded-[20px] border border-solid border-1 border-teal-500 shadow-lg">
+                        <p class="text-[16px] font-[700] text-[#4a4a4a] mb-[1rem]">موعد الولادة المتوقع</p>
+                        <h4 class="text-[#0d7de0] text-[1.5rem] font-[500] mb-[0.5rem]" id="expected-birth-date">06/09/2020</h4>
+                    </div>
+                </div>
+
+                <div class=" basis-1/4 p-[10px]">
+                    <div class="text-center p-[30px] mt-[30px] bg-[#fbfbfb] min-h-[150px] rounded-[20px] border border-gray-300 shadow-lg">
+                        <p class="text-[16px] font-[700] text-[#4a4a4a] mb-[1rem]">آخر موعد للولادة</p>
+                        <h4 class="text-[#0d7de0] text-[1.5rem] font-[500] mb-[0.5rem]" id="last-birth-date">06/09/2020</h4>
+                    </div>
+                </div>
+
+                <div class="basis-1/4 p-[10px]">
+                    <div class="text-center p-[30px] mt-[30px] bg-[#fbfbfb] min-h-[150px] rounded-[20px] border border-gray-300 shadow-lg">
+                        <p class="text-[16px] font-[700] text-[#4a4a4a] mb-[1rem]">انتى الآن فى</p>
+                        <h4 class="text-[#0d7de0] text-[1.5rem] font-[500] mb-[0.5rem]">
+                            <span>الاسبوع</span>
+                            <span id="week-birth">0</span>
+                        </h4>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="flex flex-row-reverse justify-around mt-[30px] text-center">
+                <div class="basis-1/3 p-[20px]">
+                    <div class="p-[20px] border border-solid shadow-md">
+                        <p class="text-[16px] font-[700] text-[#4a4a4a] mb-[1rem]">بداية المرحلة الأولى</p>
+                        <h4 class="text-[1.5rem] font-[500] mb-[0.5rem]" id="start-1st">06/09/2020</h4>
+                    </div>
+                </div>
+                <div class="basis-1/3 p-[20px]">
+                    <div class="p-[20px] border border-solid shadow-md text-center">
+                        <p class="text-[16px] font-[700] text-[#4a4a4a] mb-[1rem]">بداية المرحلة الثانية</p>
+                        <h4 class="text-[1.5rem] font-[500] mb-[0.5rem]" id="start-2nd">06/09/2020</h4>
+                    </div>
+                </div>
+                <div class="basis-1/3 p-[20px]">
+                    <div class="p-[20px] border border-solid shadow-md text-center">
+                        <p class="text-[16px] font-[700] text-[#4a4a4a] mb-[1rem]">بداية المرحلة الثالثة</p>
+                        <h4 class="text-[1.5rem] font-[500] mb-[0.5rem]" id="start-3rd">06/09/2020</h4>
+                    </div>
+                </div>
+            </div>
+
+            <h1 class="text-[1.75rem] font-[500]">نتائج القياسات الشخصية</h1>
+            <div>
+                <table class="w-[100%]">
+                    <thead class="w-[100%]">
+                      <tr class="w-[100%]">
+                        <th >خطوات</th>
+                        <th >اليوم</th>
+                        <th >أسبوع</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr >
+                          <th scope="row">مرحلة تكون الجنين</th>
+                          <td id="week-2">النتيجة</td>
+                          <td>2</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">بداية علامات الحمل</th>
+                            <td id="week-4">النتيجة</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">ظهور النبض لدى الجنين وكذلك ظهور أطرافه كبراعم صغيرة</th>
+                            <td id="week-5">النتيجة</td>
+                            <td>5</td>
+                      </tr>
+                      <tr>
+                            <th scope="row">زيادة فى حجم الرحم وأعضاء الجنين مكتملة بوزن 7 جم تقريباً</th>
+                            <td id="week-10">النتيجة</td>
+                            <td>10</td>
+                      </tr>
+                      <tr>
+                            <th scope="row">يبدأ رأس الجنين بأخذ الشكل المستدير</th>
+                            <td id="week-12">النتيجة</td>
+                            <td>12</td>
+                      </tr>
+                      <tr>
+                            <th scope="row">إزدياد فى حجم البطن وبداية نمو شعر الجنين</th>
+                            <td id="week-14">النتيجة</td>
+                            <td>14</td>
+                      </tr>
+                      <tr>
+                            <th scope="row">يبدأ طفلك الإحساس بالضوء من خلال طبقات جلدك</th>
+                            <td id="week-15">النتيجة</td>
+                            <td>15</td>
+                      </tr>
+                      <tr>
+                            <th scope="row">معرفة نوع الجنين</th>
+                            <td id="week-16">النتيجة</td>
+                            <td>16</td>
+                      </tr>
+                      <tr>
+                            <th scope="row">تصبح حركات الجنين محسوسة وبداية مرحلة تكوين الأسنان</th>
+                            <td id="week-18">النتيجة</td>
+                            <td>18</td>
+                      </tr>
+                      <tr>
+                            <th scope="row">يبدأ الجنين الإحساس بالأصوات الخارجية</th>
+                            <td id="week-19">النتيجة</td>
+                            <td>19</td>
+                      </tr>
+                      <tr>
+                            <th scope="row">يصل وزن الجنين حوالى 500 جم</th>
+                            <td id="week-23">النتيجة</td>
+                            <td>23</td>
+                      </tr>
+                      <tr>
+                            <th scope="row">يبدأ الجنين فى مرحلة التنفس</th>
+                            <td id="week-27">النتيجة</td>
+                            <td>27</td>
+                      </tr>
+                      <tr>
+                            <th scope="row">يبدأ الجنين بأخذ وضعية الولادة وذلك بتوجيه الرأس الى أسفل الرحم</th>
+                            <td id="week-32">النتيجة</td>
+                            <td>32</td>
+                      </tr>
+                      <tr>
+                            <th scope="row">يزداد وزن الجنين بمعدل 100 جم كل ثلاثة أيام</th>
+                            <td id="week-37">النتيجة</td>
+                            <td>37</td>
+                      </tr>
+                      <tr>
+                            <th scope="row">أنت الآن بإنتظار مولودك الجديد</th>
+                            <td id="week-40">النتيجة</td>
+                            <td>40</td>
+                      </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
