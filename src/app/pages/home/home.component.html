@@ -9,16 +9,17 @@
          </div>
          <div>
             <nav class="site_nave">
-               <ul class=" flex flex-row items-center space-x-2">
+               <ul class=" flex flex-row items-center">
                   <li>
-                     <a rel="alternate" hreflang="ar" href="/blog" target="_blank">العربية</a>
+                     <a *ngIf="language === 'en'" href="/home#ar" (click)="changeLanguage()">العربية</a>
+                     <a *ngIf="language === 'ar'" href="/home#en" (click)="changeLanguage()">English</a>
                   </li>
                   <li class="country relative" (mouseenter)="showDropdown()" (mouseleave)="hideDropdown()">
                      <a>
                         <img src="/assets/images/general/eg.png" width="48" >
                      </a>  
                      <ul *ngIf="isCountryFlag"  class="absolute nav_children" (mouseenter)="showDropdown()" (mouseleave)="hideDropdown()">
-                        <li class="flex items-center border-b	" >
+                        <li class="flex items-center border-b" >
                            <button class="flex items-center">
                               <img src="/assets/images/general/eg.png" width="48"/>
                               <span class="ml-[5px] text-[#4a4a4a] font-[700]">Egypt</span>
@@ -33,13 +34,13 @@
                      </ul>
                   </li>
                   <li>
-                     <a href="/blog/" target="_blank">Articles</a>
+                     <a href="/blog/" target="_blank">{{"Articles" | translate}}</a>
                   </li>
                   <li>
-                     <a routerLink="/register" target="_blank">List your Business</a>
+                     <a routerLink="/register" target="_blank">{{"List your Business" | translate}}</a>
                   </li>
                   <li>
-                     <a href="#" onclick="return false" ><i class="fas fa-user"></i>Sign in/Join</a>
+                     <a href="#" onclick="return false" ><i class="fas fa-user"></i>{{"Sign in/Join" | translate}}</a>
                   </li>
                </ul>
             </nav>
@@ -47,42 +48,42 @@
       </div>
    </div>
    <div class="home_intro_text z-10 relative">
-      <h1 class="text-[white] font-sans lg:text-7xl md:text-4xl text-2xl	font-bold text-center font-extrabold	">
-         Feeling Sick?<br>
-         Find a doctor. It is free.
+      <h1 class="text-[white] font-sans lg:text-7xl md:text-4xl text-2xl	font-bold text-center font-extrabold">
+         {{ 'Hello_Message_1' | translate }}<br>
+         {{ 'Hello_Message_2' | translate }}
       </h1>
    </div>
    <div class="z-10 relative m-auto max-w-[1140px]">
       <div class="home_filter_wrapper mt-[80px] mb-[20px] mx-[40px]">
          <ul class="nav flex flex-row justify-center">
-            <li class="nav-item font-semibold !text-[white]">
-               <a class="nav-link active" href="/home">
+            <li class="nav-item font-semibold !text-[white] ">
+               <a class="nav-link active" href="/home#doctor" (click)="onClick($event)">
                   <i class="icon-doctor"></i>
-                  <span class="lg:block hidden">Doctors</span>
+                  <span class="lg:block hidden">{{"Doctors" | translate}}</span>
                </a>
             </li>
-            <li class="nav-item ">
-               <a class="nav-link hospitals " id="hospitals-tab" data-toggle="tab" href="#hospitals" role="tab" aria-controls="hospitals" aria-selected="false">
+            <li class="nav-item">
+               <a class="nav-link hospitals " href="/home#hospital" (click)="onClick($event)">
                   <i class="icon-hospital"></i>
-                  <span class="lg:block hidden">Hospitals</span>
+                  <span class="lg:block hidden">{{"Hospitals" | translate}}</span>
                </a>
             </li>
-            <li class="nav-item  ">
-               <a class="nav-link centers " id="centers-tab" data-toggle="tab" href="#centers" role="tab" aria-controls="centers" aria-selected="false">
+            <li class="nav-item">
+               <a class="nav-link centers " href="/home#center" (click)="onClick($event)">
                   <i class="icon-center"></i>
-                  <span class="lg:block hidden">Centers</span>
+                  <span class="lg:block hidden">{{"Centers" | translate}}</span>
+               </a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link pharmacies" href="/home#pharmacy" (click)="onClick($event)">
+                  <i class="icon-pharmacey"></i>
+                  <span class="lg:block hidden">{{"Pharmacies" | translate}}</span>
                </a>
             </li>
             <li class="nav-item ">
-               <a class="nav-link pharmacies" id="pharmacies-tab" data-toggle="tab" href="#pharmacies" role="tab" aria-controls="pharmacies" aria-selected="false">
-                  <i class="icon-pharmacey"></i>
-                  <span class="lg:block hidden">Pharmacies</span>
-               </a>
-            </li>
-            <li class="nav-item  ">
-               <a class="nav-link labs " id="labs-tab" data-toggle="tab" href="#labs" role="tab" aria-controls="labs" aria-selected="false">
+               <a class="nav-link labs" href="/home#lab" (click)="onClick($event)">
                   <i class="icon-lab"></i>
-                  <span class="lg:block hidden">Labs</span>
+                  <span class="lg:block hidden">{{"Labs" | translate}}</span>
                </a>
             </li>
          </ul>
@@ -90,11 +91,10 @@
       <div class="tab-content home_tab_content mt-[50px]">
          <form>
             <ul class="flex flex-row justify-center">
-               <li>
-                  <div class="relative !w-[100%]">
+               <li *ngIf="searchBar_Content[0] relative">
+                  <div class="!w-[100%]">
                      <select>
-                        <option><input /></option>
-                        <option>Specialty</option>
+                        <option>{{"Specialty" | translate}}</option>
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -102,48 +102,148 @@
                         <option>5</option>
                         <option>6</option>
                      </select>
-                     <button class="toggle-btn">Specialty</button>
-                     <div class="drop-menu">
-                        <div>
-                           <input class="form-control px-[4px] py-[8px]"/>
-                        </div>
-                        <div>
-                           <ul>
-                              <li>1</li>
-                              <li>2</li>
-                              <li>3</li>
-                              <li>4</li>
-                              <li>5</li>
-                              <li>6</li>
-                              <li>7</li>
-                           </ul>
+                     <button class="toggle-btn" (click)="toggleDropdown(0)">{{"Specialty" | translate}}</button>
+                     
+                     <div *ngIf="dropdown[0]" class="dropdown-menu">
+                        <div class="dropdown-menu_2 bg-white">
+                           <div class="px-[4px] py-[8px]"><input class="form-control dropdown_search" type="text"/></div>
+                           <div class="dropmenu">
+                              <ul>
+                                 <li class="!bg-gray-800 text-white">
+                                    <a>{{"Specialty" | translate}}</a>
+                                 </li>
+                                 <li>1</li>
+                                 <li>2</li>
+                                 <li>3</li>
+                              </ul>
+                           </div>
                         </div>
                      </div>
                   </div>
                   
                </li>
-               <li>
-                  <select>
-                     <option>City</option>
-                  </select>
+               <li *ngIf="searchBar_Content[1] relative">
+                  <div class="!w-[100%]">
+                     <select>
+                        <option><input /></option>
+                        <option>{{"City" | translate}}</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                     </select>
+                     <button class="toggle-btn" (click)="toggleDropdown(1)">{{"City" | translate}}</button>
+                     <div *ngIf="dropdown[1]" class="dropdown-menu">
+                        <div class="dropdown-menu_2 bg-white">
+                           <div class="px-[4px] py-[8px]"><input class="form-control dropdown_search" type="text"/></div>
+                           <div class="dropmenu">
+                              <ul>
+                                 <li class="!bg-gray-800 text-white">
+                                    <a>{{"City" | translate}}</a>
+                                 </li>
+                                 <li>1</li>
+                                 <li>2</li>
+                                 <li>3</li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
                </li>
-               <li>
-                  <select>
-                     <option>Area</option>
-                  </select>
+               <li *ngIf="searchBar_Content[2] relative">
+                  <div class="!w-[100%]">
+                     <select>
+                        <option><input /></option>
+                        <option>{{"Area" | translate}}</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                     </select>
+                     <button class="toggle-btn" (click)="toggleDropdown(2)">{{"Area" | translate}}</button>
+                     <div *ngIf="dropdown[2]" class="dropdown-menu">
+                        <div class="dropdown-menu_2 bg-white">
+                           <div class="px-[4px] py-[8px]"><input class="form-control dropdown_search" type="text"/></div>
+                           <div class="dropmenu">
+                              <ul>
+                                 <li class="!bg-gray-800 text-white">
+                                    <a>{{"Area" | translate}}</a>
+                                 </li>
+                                 <li>1</li>
+                                 <li>2</li>
+                                 <li>3</li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
                </li>
-               <li>
-                  <select>
-                     <option>Service</option>
-                  </select>
+               <li *ngIf="searchBar_Content[3] relative">
+                  <div class="!w-[100%]">
+                     <select>
+                        <option><input /></option>
+                        <option>{{"Service" | translate}}</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                     </select>
+                     <button class="toggle-btn" (click)="toggleDropdown(3)">{{"Service" | translate}}</button>
+                     <div *ngIf="dropdown[3]" class="dropdown-menu">
+                        <div class="dropdown-menu_2 bg-white">
+                           <div class="px-[4px] py-[8px]"><input class="form-control dropdown_search" type="text"/></div>
+                           <div class="dropmenu">
+                              <ul>
+                                 <li class="!bg-gray-800 text-white">
+                                    <a>{{"Service" | translate}}</a>
+                                 </li>
+                                 <li>1</li>
+                                 <li>2</li>
+                                 <li>3</li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
                </li>
-               <li>
-                  <select>
-                     <option>Insurance</option>
-                  </select>
+               <li *ngIf="searchBar_Content[4] relative">
+                  <div class="!w-[100%]">
+                     <select>
+                        <option><input /></option>
+                        <option>{{"Insurance" | translate}}</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                     </select>
+                     <button class="toggle-btn" (click)="toggleDropdown(4)">{{"Insurance" | translate}}</button>
+                     <div *ngIf="dropdown[4]" class="dropdown-menu">
+                        <div class="dropdown-menu_2 bg-white">
+                           <div class="px-[4px] py-[8px]"><input class="form-control dropdown_search" type="text"/></div>
+                           <div class="dropmenu">
+                              <ul>
+                                 <li class="!bg-gray-800 text-white">
+                                    <a>{{"Insurance" | translate}}</a>
+                                 </li>
+                                 <li>1</li>
+                                 <li>2</li>
+                                 <li>3</li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
                </li>
                <li class="double !basis-[150%]">
-                  <input placeholder="Name" type="text"/>
+                  <input placeholder="{{'Name' | translate}}" type="text"/>
                </li>
                <li class="!basis-[40%] action">
                   <button class="search">
@@ -159,7 +259,11 @@
 
 <section class="py-[70px] bg-[#fafafa]">
    <div class="container lg: max-w-[1280px]">
-      <h2 class="specialty_header">Popular Specialities</h2>
+      <div class="relative max-w-[30%]">
+         <h2 class="specialty_header">{{"Popular Specialities" | translate}}</h2>
+         <img *ngIf="language=='en'" src="/assets/images/home/header-icon.svg" class="absolute top-[-15px]   right-[23px]">
+         <img *ngIf="language=='ar'" src="/assets/images/home/header-icon.svg" class="absolute top-[-15px]   left-[-10px]">
+      </div>      
       <div class="flex flex-row justify-center  text-center	">
          <div class="col-md items-center">
             <a class="news_data">
@@ -167,7 +271,7 @@
                   <img src="/assets/images/home/eye.png" width="110px"/>
                </div>
                <div>
-                  <h5>Ophthalmology</h5>
+                  <h5>{{"Ophthalmology" | translate}}</h5>
                </div>
             </a>
          </div>
@@ -177,7 +281,7 @@
                   <img src="/assets/images/home/teeth.png" width="110px"/>
                </div>
                <div>
-                  <h5>Dentistry</h5>
+                  <h5>{{"Dentistry" | translate}}</h5>
                </div>
             </a>
          </div>
@@ -187,7 +291,7 @@
                   <img src="/assets/images/home/skin.png" width="110px"/>
                </div>
                <div>
-                  <h5>Dermatologist</h5>
+                  <h5>{{"Dermatologist" |translate}}</h5>
                </div>
             </a>
          </div>
@@ -197,7 +301,7 @@
                   <img src="/assets/images/home/pregnant.png" width="110px"/>
                </div>
                <div>
-                  <h5>Obstretrics and Gynecology</h5>
+                  <h5>{{"Obstretrics and Gynecology" | translate}}</h5>
                </div>
             </a>
          </div>
@@ -207,7 +311,7 @@
                   <img src="/assets/images/home/heart.png" width="110px"/>
                </div>
                <div>
-                  <h5>Cardiology</h5>
+                  <h5>{{"Cardiology" | translate}}</h5>
                </div>
             </a>
          </div>
@@ -217,7 +321,7 @@
                   <img src="/assets/images/home/baby.png" width="110px"/>
                </div>
                <div>
-                  <h5>Pediatrician</h5>
+                  <h5>{{"Pediatrician" | translate}}</h5>
                </div>
             </a>
          </div>
@@ -226,22 +330,23 @@
    
 </section>
 
-<!-- <section class="py-[70px] bg-[url('/assets/images/home/doc_background.jpg')] bg-no-repeat bg-cover"> -->
 <section class="py-[70px] bg-[#5487e1] bg-no-repeat bg-cover">
-
    <div class="container lg:max-w-[1280px]">
       <div class="flex flex-row relative items-baseline">
          <div class="w-[66%]">
-            <strong class="text-white	text-[40px] font-[700]">Are you a doctor?</strong>
-            <p class="pt-[8px] text-white text-[20px]">List your practice to reach millions of patients.</p>
+            <strong class="text-white	text-[40px] font-[700]">{{"Are you a doctor?" | translate}}</strong>
+            <p class="pt-[8px] text-white text-[20px]">{{"List your practice to reach millions of patients." | translate}}</p>
             <ul class="my-[15px] ml-[120px] list-disc	">
-               <li class="text-[15px] font-[500] pt-[5px] text-white">Attract and engage new patients</li>
-               <li class="text-[15px] font-[500] pt-[5px] text-white">Build and strengthen your online reputation</li>
-               <li class="text-[15px] font-[500] pt-[5px] text-white">Deliver a premium experience patients love</li>
+               <li class="text-[15px] font-[500] pt-[5px] text-white">{{"Attract and engage new patients" | translate}}</li>
+               <li class="text-[15px] font-[500] pt-[5px] text-white">{{"Build and strengthen your online reputation" | translate}}</li>
+               <li class="text-[15px] font-[500] pt-[5px] text-white">{{"Deliver a premium experience patients love" | translate}}</li>
            </ul>
-           <a routerLink="/register" class="default_btn mt-[10px] ml-[100px]">List your practice on Doctorak</a>
+           <a routerLink="/register" class="default_btn mt-[10px] ml-[100px]">{{"List your practice on Doctorak" | translate}}</a>
          </div>
-         <div class="absolute top-[-112px] right-[0px] ">
+         <div *ngIf="language === 'en'" class="absolute top-[-112px] right-[0px] ">
+            <img class="scale-x-[-1]" src="/assets/images/home/convince_doctor_img.png" />
+         </div>
+         <div *ngIf="language === 'ar'" class="absolute top-[-112px] left-[0px] ">
             <img class="scale-x-[-1]" src="/assets/images/home/convince_doctor_img.png" />
          </div>
       </div>
@@ -250,60 +355,64 @@
 </section>
 
 
-<section class="pt-[50px] bg-[#fafafa]">
+<section class="py-[50px] bg-[#fff]">
    <div class="container lg: max-w-[1280px]">
-      <h2>Calculator</h2>
+      <div class="relative max-w-[20%]">
+         <h2>{{"Calculator" | translate}}</h2>
+         <img *ngIf="language === 'en'" src="/assets/images/home/cal.svg" class="absolute top-[-7px] right-[52px] w-[40px]"/>
+         <img *ngIf="language === 'ar'" src="/assets/images/home/cal.svg" class="absolute top-[-7px] left-[30%] w-[40px]"/>
+
+      </div>
       <div class="flex flex-row justify-center  text-center	">
          <div class="col-md items-center">
-            <a class="news_data">
+            <a class="news_data" routerLink="/cal/child">
                <div>
                   <img src="/assets/images/home/pregnant.png" width="110px"/>
                </div>
                <div>
                   <h5>
-                     Pregnancy Calculator
+                     {{"Pregnancy Calculator" | translate}}
                   </h5>
                </div>
             </a>
          </div>
          <div class="col-md">
-            <a class="news_data">
+            <a class="news_data" routerLink="/cal/body">
                <div>
                   <img src="/assets/images/home/calorie.png" width="110px"/>
                </div>
                <div>
-                  <h5>Calorie Calculator</h5>
+                  <h5>{{"Calorie Calculator" | translate}}</h5>
                </div>
             </a>
          </div>
          <div class="col-md">
-            <a class="news_data">
+            <a class="news_data" routerLink="/cal/obulation">
                <div>
                   <img src="/assets/images/home/Ovulation.png" width="110px"/>
                </div>
                <div>
-                  <h5>
-                     Ovulation Calculator</h5>
+                  <h5>{{"Ovulation Calculator" | translate}}</h5>
                </div>
             </a>
          </div>
          <div class="col-md">
-            <a class="news_data">
+            <a class="news_data" routerLink="/cal/body">
                <div>
                   <img src="/assets/images/home/body.png" width="110px"/>
                </div>
                <div>
-                  <h5>Body Mass Index Calculator (BMI)</h5>
+                  <h5>{{"Body Mass Index Calculator (BMI)" | translate}}</h5>
                </div>
             </a>
          </div>
          <div class="col-md">
-            <a class="news_data">
+            <a class="news_data" routerLink="/cal/obulation">
                <div>
                   <img src="/assets/images/home/period.png" width="110px"/>
                </div>
                <div>
-                  <h5>Period Calculator</h5>
+                  <h5>{{"Period Calculator" | translate}}</h5>
                </div>
             </a>
          </div>
@@ -313,13 +422,13 @@
 
 <section class="py-[80px] bg-[#fafafa]">
    <div class="container lg: max-w-[1280px]">
-      <h2>Find whatever you seek …</h2>
+      <h2>{{"Find whatever you seek …" | translate}}</h2>
       <div class="flex flex-row space-x-10">
          <div class="col-md">
             <div class="seeking_header pb-[10px]">
-               <h3 class="relative inline-block text-[18px] font-[600] pt-[20px] mb-[0px]">
+               <h3 class="relative inline-block text-[27px] font-[600] pt-[20px] mb-[0px]">
                   <i class="icon-doctor text-[35px]"></i>
-                  <span class="ml-[15px]">Doctors</span>
+                  <span class="ml-[15px]">{{"Doctors" | translate}}</span>
                </h3>
             </div>
             <div class="seeking_content pt-[20px]">
@@ -335,15 +444,15 @@
                   <li><a href="https://staging.doctorak.com/eg_en/doctor?speciality=9" target="_blank">General surgery</a></li>
                   <li><a href="https://staging.doctorak.com/eg_en/doctor?speciality=10" target="_blank">Pediatric surgery</a></li>
                </ul>
-               <a href="https://staging.doctorak.com/eg_en/doctor" class="btn btn-link" target="_blank">View All</a>
+               <a href="https://staging.doctorak.com/eg_en/doctor" class="btn btn-link" target="_blank">{{"View All" | translate}} </a>
 
             </div>
          </div>
          <div class="col-md">
             <div class="seeking_header pb-[10px]">
-               <h3 class="relative inline-block text-[18px] font-[600] pt-[20px] mb-[0px]">
+               <h3 class="relative inline-block text-[27px] font-[600] pt-[20px] mb-[0px]">
                   <i class="icon-hospital text-[35px]"></i>
-                  <span class="ml-[15px]">Hospitals</span>
+                  <span class="ml-[15px]">{{"Hospitals" | translate}}</span>
                </h3>
             </div>
             <div class="seeking_content pt-[20px]">
@@ -359,14 +468,14 @@
                   <li><a href="https://staging.doctorak.com/eg_en/hospital/9">Hospital Specialized Medical Center (Ministry of Interior)</a></li>
                   <li><a href="https://staging.doctorak.com/eg_en/hospital/10">Hospital Arab Contractors Medical Center (Internal Medicine Cases Only)</a></li>
                </ul>
-               <a href="https://staging.doctorak.com/eg_en/hospital" class="btn btn-link">View All</a>
+               <a href="https://staging.doctorak.com/eg_en/hospital" class="btn btn-link">{{"View All" | translate}}</a>
             </div>
          </div>
          <div class="col-md">
             <div class="seeking_header pb-[10px]">
-               <h3 class="relative inline-block text-[18px] font-[600] pt-[20px] mb-[0px]">
+               <h3 class="relative inline-block text-[27px] font-[600] pt-[20px] mb-[0px]">
                   <i class="icon-center text-[35px]"></i>
-                  <span class="ml-[15px]">Centers</span>
+                  <span class="ml-[15px]">{{"Centers" | translate}} </span>
                </h3>
             </div>
             <div class="seeking_content pt-[20px]">
@@ -382,14 +491,14 @@
                   <li><a href="https://staging.doctorak.com/eg_en/center/10">Center Digestive surgery and endoscopy unit</a></li>
                   <li><a href="https://staging.doctorak.com/eg_en/center/11">Center ENT Clinic (Otolaryngology Surgery)</a></li>
                </ul>
-               <a href="https://staging.doctorak.com/eg_en/center" class="btn btn-link">View All</a>
+               <a href="https://staging.doctorak.com/eg_en/center" class="btn btn-link">{{"View All" | translate}}</a>
             </div>
          </div>
          <div class="col-md">
             <div class="seeking_header pb-[10px]">
-               <h3 class="relative inline-block text-[18px] font-[600] pt-[20px] mb-[0px]">
+               <h3 class="relative inline-block text-[27px] font-[600] pt-[20px] mb-[0px]">
                   <i class="icon-pharmacey text-[35px]"></i>
-                  <span class="ml-[15px]">Pharmacies</span>
+                  <span class="ml-[15px]">{{"Pharmacies" | translate}} </span>
                </h3>
             </div>
             <div class="seeking_content pt-[20px]">
@@ -405,12 +514,11 @@
                   <li><a href="https://staging.doctorak.com/eg_en/pharmacy/9">Pharmacy El Malek El Saleh</a></li>
                   <li><a href="https://staging.doctorak.com/eg_en/pharmacy/10">Pharmacy El Ahram El Kobra</a></li>
                </ul>
-               <a href="https://staging.doctorak.com/eg_en/pharmacy" class="btn btn-link">View All</a>
+               <a href="https://staging.doctorak.com/eg_en/pharmacy" class="btn btn-link">{{"View All" | translate}}</a>
             </div>
          </div>
       </div>
    </div>
-
 </section>
 
 <app-footer></app-footer>
