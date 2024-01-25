@@ -8,6 +8,9 @@ import { MatIconModule } from '@angular/material/icon'; // Import MatIconModule
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { ImageSliderModule } from './components/image-slider/image-slider.module';
+import { NzCarouselModule } from 'ng-zorro-antd/carousel';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { PagesRoutingModule } from './pages/routing';
@@ -26,6 +29,14 @@ import { ChildCalComponent } from './pages/calculator/child-cal/child-cal.compon
 import { MenstrualCycleCalComponent } from './pages/calculator/menstrual-cycle-cal/menstrual-cycle-cal.component';
 import { ObulationCalcComponent } from './pages/calculator/obulation-calc/obulation-calc.component';
 import { CalorieCalcComponent } from './pages/calculator/calorie-calc/calorie-calc.component';
+import { DoctorComponent } from './pages/doctor/doctor.component';
+import { HospitalComponent } from './pages/hospital/hospital.component';
+import { CenterComponent } from './pages/center/center.component';
+import { PharmacyComponent } from './pages/pharmacy/pharmacy.component';
+import { BlogHeaderComponent } from './components/blog-header/blog-header.component';
+import { BlogComponent } from './pages/blog/blog.component';
+import { MedicineComponent } from './pages/medicine/medicine.component';
+import { MainSliderComponent } from './components/main-slider/main-slider.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +54,15 @@ import { CalorieCalcComponent } from './pages/calculator/calorie-calc/calorie-ca
     ChildCalComponent,
     MenstrualCycleCalComponent,
     ObulationCalcComponent,
-    CalorieCalcComponent
+    CalorieCalcComponent,
+    DoctorComponent,
+    HospitalComponent,
+    CenterComponent,
+    PharmacyComponent,
+    BlogHeaderComponent,
+    BlogComponent,
+    MedicineComponent,
+    MainSliderComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +74,8 @@ import { CalorieCalcComponent } from './pages/calculator/calorie-calc/calorie-ca
     MatIconModule,
     MatButtonModule,
     MatFormFieldModule,
+    ImageSliderModule,
+    NzCarouselModule,
    TranslateModule.forRoot({
      loader: {
        provide: TranslateLoader,

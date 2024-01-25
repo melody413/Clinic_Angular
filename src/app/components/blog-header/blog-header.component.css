@@ -1,0 +1,22 @@
+.container{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#search-input {
+    border: 1px solid rgba(0,0,0,0.1);
+    height: 50px;
+    border-radius: 25px;
+    position: relative;
+}
+
+#search-btn{
+    position: absolute;
+    right: 0;
+    top: 15px;
+    left: 10px!important;
+    width: 26px;
+    color: #777777;
+}

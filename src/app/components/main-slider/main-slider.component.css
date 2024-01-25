@@ -1,0 +1,22 @@
+[nz-carousel-content] {
+    text-align: center;
+    height: 160px !important;
+    line-height: 160px !important;
+    background: #364d79;
+    color: #fff;
+    overflow: hidden;
+  }
+
+  h3 {
+    color: #fff;
+    margin-bottom: 0;
+    user-select: none;
+  }
+
+  .slick-track{
+    display: flex;
+  }
+
+  .slide_item{
+    height: 160px !important;
+  }

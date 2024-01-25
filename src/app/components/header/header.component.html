@@ -1,1 +1,30 @@
-<p>header works!</p>
+<header class="relatvie">
+    <div class="relatvie flex justify-center !items-center	 w-full h-[130px] bg-gradient-to-r from-blue-800 via-blue-500 to-blue-300">
+        <div class="yello_shape"></div>
+        <div class="container lg: max-w-[1280px] z-10 ">
+            <div class="flex flex-row justify-between">
+                <div>
+                    <a routerLink="/home"><img src="/assets/images/home/logo_big.png" /></a>
+                </div>
+                <div class="self-center">
+                    <nav class="site_nave">
+                       <ul class=" flex flex-row items-center">
+                          <li>
+                             <a href="/home#ar">العربية</a>
+                          </li>
+                          <li>
+                             <a href="/blog/" target="_blank">{{"Articles" | translate}}</a>
+                          </li>
+                          <li>
+                             <a routerLink="/register" target="_blank">{{"List your Business" | translate}}</a>
+                          </li>
+                          <li>
+                             <a href="#" onclick="return false" ><i class="fas fa-user"></i>{{"Sign in/Join" | translate}}</a>
+                          </li>
+                       </ul>
+                    </nav>
+                 </div>
+            </div>
+        </div>
+    </div>
+</header>

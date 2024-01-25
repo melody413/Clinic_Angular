@@ -1,0 +1,231 @@
+<app-header></app-header>
+<div class="serach_bar relative bg-[white] h-[130px] w-full z-20 flex items-center">
+    <div class="tab-content container lg:max-w-[1280px] home_tab_content">
+        <form>
+           <ul class="flex flex-row justify-center">
+              <li class="relative">
+                 <div class="!w-[100%]">
+                    <select>
+                       <option>{{"Specialty" | translate}}</option>
+                       <option>1</option>
+                       <option>2</option>
+                       <option>3</option>
+                       <option>4</option>
+                       <option>5</option>
+                       <option>6</option>
+                    </select>
+                    <button class="toggle-btn" (click)="toggleDropdown(0)">{{"Specialty" | translate}}</button>
+                    
+                    <div *ngIf="dropdown[0]"  class="dropdown-menu">
+                       <div class="dropdown-menu_2 bg-white">
+                          <div class="px-[4px] py-[8px]"><input class="form-control dropdown_search" type="text"/></div>
+                          <div class="dropmenu">
+                             <ul>
+                                <li class="!bg-gray-800 text-white">
+                                   <a>{{"Specialty" | translate}}</a>
+                                </li>
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                             </ul>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+                 
+              </li>
+              <li class="relative">
+                 <div class="!w-[100%]">
+                    <select>
+                       <option><input /></option>
+                       <option>{{"City" | translate}}</option>
+                       <option>1</option>
+                       <option>2</option>
+                       <option>3</option>
+                       <option>4</option>
+                       <option>5</option>
+                       <option>6</option>
+                    </select>
+                    <button class="toggle-btn" (click)="toggleDropdown(1)">{{"City" | translate}}</button>
+                    <div *ngIf="dropdown[1]" class="dropdown-menu">
+                       <div class="dropdown-menu_2 bg-white">
+                          <div class="px-[4px] py-[8px]"><input class="form-control dropdown_search" type="text"/></div>
+                          <div class="dropmenu">
+                             <ul>
+                                <li class="!bg-gray-800 text-white">
+                                   <a>{{"City" | translate}}</a>
+                                </li>
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                             </ul>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </li>
+              <li class="relative">
+                 <div class="!w-[100%]">
+                    <select>
+                       <option><input /></option>
+                       <option>{{"Area" | translate}}</option>
+                       <option>1</option>
+                       <option>2</option>
+                       <option>3</option>
+                       <option>4</option>
+                       <option>5</option>
+                       <option>6</option>
+                    </select>
+                    <button class="toggle-btn" (click)="toggleDropdown(2)">{{"Area" | translate}}</button>
+                    <div *ngIf="dropdown[2]" class="dropdown-menu">
+                       <div class="dropdown-menu_2 bg-white">
+                          <div class="px-[4px] py-[8px]"><input class="form-control dropdown_search" type="text"/></div>
+                          <div class="dropmenu">
+                             <ul>
+                                <li class="!bg-gray-800 text-white">
+                                   <a>{{"Area" | translate}}</a>
+                                </li>
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                             </ul>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </li>
+              <li class="relative">
+                 <div class="!w-[100%]">
+                    <select>
+                       <option><input /></option>
+                       <option>{{"Insurance" | translate}}</option>
+                       <option>1</option>
+                       <option>2</option>
+                       <option>3</option>
+                       <option>4</option>
+                       <option>5</option>
+                       <option>6</option>
+                    </select>
+                    <button class="toggle-btn" (click)="toggleDropdown(4)">{{"Insurance" | translate}}</button>
+                    <div *ngIf="dropdown[4]" class="dropdown-menu">
+                       <div class="dropdown-menu_2 bg-white">
+                          <div class="px-[4px] py-[8px]"><input class="form-control dropdown_search" type="text"/></div>
+                          <div class="dropmenu">
+                             <ul>
+                                <li class="!bg-gray-800 text-white">
+                                   <a>{{"Insurance" | translate}}</a>
+                                </li>
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                             </ul>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </li>
+              <li class="double !basis-[150%]">
+                 <input placeholder="{{'Name' | translate}}" type="text"/>
+              </li>
+              <li class="!basis-[40%] action">
+                 <button class="search">
+                    <i class="icon-search"></i>
+                 </button>
+              </li>
+
+           </ul>
+        </form>
+     </div>
+</div>
+
+<section class="py-[30px] bg-[#fafafa]">
+    <div class="container lg: max-w-[1280px] ">
+        <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="flex flex-row justify-start space-x-[10px] text-[17px] font-[500] underline ">
+            <li itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/ListItem">
+              <a itemprop="item" routerLink="/home">
+              <span itemprop="name">Home</span></a>
+              <span itemprop="position" hidden> 1 </span>
+            </li>
+            <li itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/ListItem"
+                class="nav_item"
+                >
+              <a itemprop="item" routerLink="/doctor">
+              <span itemprop="name">Center</span></a>
+              <span itemprop="position" hidden> 2 </span>
+            </li>
+          </ol>
+    </div>
+    <div class="container lg:max-w-[1280px]">
+        <div class="flex justify-center py-[30px]">
+            <h1 class="font-[600] text-[33px]">BEST CENTER IN EGYPT</h1>
+        </div>
+        <div class="center-list">
+            <div class="center-list-item flex flex-row">
+                <div class="basis-1/5 ">
+                    <div class="flex justify-center items-center p-[35px]">
+                        <a>
+                            <img src="/assets/images/favicon/apple-icon-120x120.png" />
+                            <span class="detail-btn mt-[10px]">Detail</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="basis-4/5 py-[35px]">
+                    <div>
+                        <h1 class="mb-[3px]">
+                            <a class="text-[24px] font-[500] text-[#007bff]">Dr. Abdel al Qader Fahmy Hospital
+                            </a>
+                        </h1>
+                        <p class="text-[#6a707a] mt-[15px]">Specialist</p>
+                    </div>
+                    <div class="mt-[15px]">
+                        <ul>
+                            <li>
+                                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Tower 3, Zaher Towers, Hassan Mamoun Street, after Al Salam Mosque</span>
+                                |
+                                <span class="text-[#007bff]">
+                                    <a href="https://doctorak.com/eg_en/doctor?city=1 ">Cairo</a>
+                                </span>
+                                -
+                                <span class="text-[#007bff]">
+                                    <a href="https://doctorak.com/eg_en/doctor?area=262&amp;city=1 ">Masr el gedida</a>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pagination mt-[30px]">
+            <nav>
+                <ul class="pagination flex flex-row">
+                    <li class="page-item disabled" aria-disabled="true" aria-label="« Previous">
+                    <span class="page-link" aria-hidden="true">‹</span>
+                    </li>
+                    <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
+                    <li class="page-item"><a class="page-link" href="http://doctorak.com/eg_en/hospital?page=2">2</a></li>
+                    <li class="page-item"><a class="page-link" href="http://doctorak.com/eg_en/hospital?page=3">3</a></li>
+                    <li class="page-item"><a class="page-link" href="http://doctorak.com/eg_en/hospital?page=4">4</a></li>
+                    <li class="page-item"><a class="page-link" href="http://doctorak.com/eg_en/hospital?page=5">5</a></li>
+                    <li class="page-item"><a class="page-link" href="http://doctorak.com/eg_en/hospital?page=6">6</a></li>
+                    <li class="page-item"><a class="page-link" href="http://doctorak.com/eg_en/hospital?page=7">7</a></li>
+                    <li class="page-item"><a class="page-link" href="http://doctorak.com/eg_en/hospital?page=8">8</a></li>
+                    <li class="page-item"><a class="page-link" href="http://doctorak.com/eg_en/hospital?page=9">9</a></li>
+                    <li class="page-item"><a class="page-link" href="http://doctorak.com/eg_en/hospital?page=10">10</a></li>
+                    <li class="page-item disabled" aria-disabled="true"><span class="page-link">...</span></li>
+                    <li class="page-item"><a class="page-link" href="http://doctorak.com/eg_en/hospital?page=50">50</a></li>
+                    <li class="page-item"><a class="page-link" href="http://doctorak.com/eg_en/hospital?page=51">51</a></li>
+                    <li class="page-item">
+                    <a class="page-link" href="http://doctorak.com/eg_en/hospital?page=2" rel="next" aria-label="Next »">›</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

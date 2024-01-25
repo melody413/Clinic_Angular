@@ -1,5 +1,4 @@
 import { Component, HostListener , ChangeDetectorRef, Renderer2} from '@angular/core';
-import { TranslateService } from "@ngx-translate/core";
 import { ActivatedRoute } from '@angular/router';
 import { LanguageService } from 'src/app/services/language/language.service';
 
@@ -15,7 +14,6 @@ export class HomeComponent {
   dropdown: boolean[] = [false, false, false, false, false];
 
   constructor(
-    private translateService: TranslateService, 
     private route: ActivatedRoute,
     private cdr: ChangeDetectorRef,
     private langService: LanguageService,
@@ -26,11 +24,9 @@ export class HomeComponent {
     if(this.langService.getCurrentLanguage() == "ar"){
       this.renderer.setAttribute(document.documentElement, 'dir', 'rtl');
       this.language = "ar";
-      this.translateService.setDefaultLang('ar');
     }else{
       this.renderer.setAttribute(document.documentElement, 'dir', 'ltr');
       this.language = "en"
-      this.translateService.setDefaultLang('en');
     }
 
     document.addEventListener('click', (event) => {
@@ -40,12 +36,6 @@ export class HomeComponent {
       }
     });
   }
-
-
-  switchLanguage(language: string) {
-    this.translateService.use(language);
-  }
-
 
   @HostListener('click', ['$event'])
   onClick(event: MouseEvent) {
@@ -105,14 +95,11 @@ export class HomeComponent {
     this.dropdown[idx] = true;
   }
 
-
   changeLanguage(){
     if(this.language == 'ar'){
       this.language = 'en';
       this.langService.setLanguage('en');
       this.renderer.setAttribute(document.documentElement, 'dir', 'ltr');
-      this.translateService.use('en');
-
     }else{
       this.language = 'ar';
       this.langService.setLanguage('ar');

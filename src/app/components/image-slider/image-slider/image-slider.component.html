@@ -1,0 +1,24 @@
+<div class="slider" style="transition: transform 0.3s ease-in-out;">
+    <div>
+        <div (click)="goToPrevious()" class="leftArrow">❰</div>
+        <div (click)="goToNext()" class="rightArrow">❱</div>
+    </div>
+    <div
+        style="transition: transform 0.3s ease-in-out;"
+        class="slide"
+        [ngStyle]="{ 'background-image': getCurrentSlideUrl() }"
+        (mousedown)="onSliderMouseDown($event)" 
+        (mousemove)="onSliderMouseMove($event)" 
+        (mouseup)="onSliderMouseUp()" 
+        (mouseleave)="onSliderMouseUp()"
+    >fasfasdfasd</div>
+    <div class="dotsContainer">
+        <div
+            *ngFor="let slide of slides; let slideIndex = index"
+            class="dot"
+            (click)="goToSlide(slideIndex)"
+        >
+        ●
+        </div>
+    </div>
+</div>
